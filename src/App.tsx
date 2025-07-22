@@ -1,6 +1,22 @@
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import AddUser from "./pages/AddUser";
+
 const App = () => {
     return (
-        <h1 className="text-xl font-bold">¡Hola desde React! 🐶</h1>
+        <Router>
+            <div className="flex flex-col">
+                <Navbar />
+
+                <main className="px-4">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/addUser" element={<AddUser />} />
+                    </Routes>
+                </main>
+            </div>
+        </Router>
     )
 }
 
