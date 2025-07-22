@@ -7,12 +7,15 @@ export default function Navbar() {
 
     return (
         <nav className="flex justify-center p-4">
-            <ul className="flex gap-4 w-full max-w-2xl">
+            <ul className="flex gap-4 w-full max-w-2xl pb-4 border-b border-slate-200">
                 <li>
                     <NavLink to="/" className={linkClass}>Inicio</NavLink>
                 </li>
                 <li>
                     <NavLink to="/addUser" className={linkClass}>Agregar usuario</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/addTask" className={linkClass}>Agregar tarea</NavLink>
                 </li>
             </ul>
         </nav>
