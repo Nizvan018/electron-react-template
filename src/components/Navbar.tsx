@@ -6,9 +6,15 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="flex gap-4 p-4">
-            <NavLink to="/" className={linkClass}>Inicio</NavLink>
-            <NavLink to="/addUser" className={linkClass}>Agregar usuario</NavLink>
+        <nav className="flex justify-center p-4">
+            <ul className="flex gap-4 w-full max-w-2xl">
+                <li>
+                    <NavLink to="/" className={linkClass}>Inicio</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/addUser" className={linkClass}>Agregar usuario</NavLink>
+                </li>
+            </ul>
         </nav>
     )
 }

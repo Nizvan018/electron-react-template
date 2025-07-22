@@ -9,7 +9,7 @@ const App = () => {
             <div className="flex flex-col">
                 <Navbar />
 
-                <main className="px-4">
+                <main className="flex justify-center px-4 w-full">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/addUser" element={<AddUser />} />
