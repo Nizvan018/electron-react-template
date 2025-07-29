@@ -3,7 +3,7 @@ import path from "path";
 import { app } from "electron";
 
 const dbPath = process.env.NODE_ENV === "development" ?
-    path.resolve(__dirname, "..", "..", "db", "test.db") :
+    "./src/db/test.db" :
     path.join(app.getPath("userData"), "test.db");
 
 const db = new Database(dbPath);

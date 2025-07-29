@@ -1,5 +1,5 @@
-import db from "../lib/dbmanager";
-import { nowISO } from "../lib/dbHelpers";
+import db from "../db/dbManager";
+import { nowISO } from "../db/dbHelpers";
 
 export interface User {
     id: string;

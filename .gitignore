@@ -90,3 +90,7 @@ typings/
 
 # Electron-Forge
 out/
+
+# SQLite
+/src/db/test.db-shm
+/src/db/test.db-wal
