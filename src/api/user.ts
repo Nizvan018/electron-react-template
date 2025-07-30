@@ -2,6 +2,11 @@ import { db } from "../db";
 import { user, type SelectUser } from "../db/schema";
 import { addUserSchema, type AddUserType } from "../schemas/addUserSchema";
 
+/**
+ * Get all the users
+ * 
+ * @returns An User array or an error
+ */
 export const getUsers = async (): Promise<{ result: SelectUser[] | null, error: string | null }> => {
     try {
         const users = await db.select().from(user);
@@ -13,6 +18,12 @@ export const getUsers = async (): Promise<{ result: SelectUser[] | null, error: 
     }
 }
 
+/**
+ * Add a new user
+ * 
+ * @param {AddUserType} formData 
+ * @returns The new user id or an error
+ */
 export const addUser = async (formData: AddUserType): Promise<{ result: string | null, error: string | null }> => {
     try {
         const now = new Date();
@@ -43,3 +54,5 @@ export const addUser = async (formData: AddUserType): Promise<{ result: string |
         return { result: null, error: "Unexpected error" }
     }
 }
+
+
