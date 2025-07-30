@@ -90,3 +90,7 @@ typings/
 
 # Electron-Forge
 out/
+
+# Databse
+test.db-shm
+test.db-wal

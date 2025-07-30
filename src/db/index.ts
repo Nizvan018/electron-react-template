@@ -21,7 +21,9 @@ export const db = drizzle({ client: sqlite, schema });
 
 // Apply the migrations:
 
-const migrationsPath = path.join(process.resourcesPath, "./drizzle");
+const migrationsPath = process.env.NODE_ENV === "development" ?
+    path.join(__dirname, "..", "..", "./drizzle") :
+    path.join(process.resourcesPath, "./drizzle");
 
 if (fs.existsSync(migrationsPath)) {
     try {

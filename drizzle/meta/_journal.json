@@ -8,6 +8,13 @@
       "when": 1753838534711,
       "tag": "0000_odd_fallen_one",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1753901573327,
+      "tag": "0001_add_task_table",
+      "breakpoints": true
     }
   ]
 }

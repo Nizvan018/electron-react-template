@@ -8,8 +8,8 @@ import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
 import { readdirSync, rmdirSync, statSync } from 'node:fs';
 import { join, normalize } from 'node:path';
-
 import { Walker, DepType, type Module } from 'flora-colossus';
+
 let nativeModuleDependenciesToPackage: string[] = [];
 
 export const EXTERNAL_DEPENDENCIES = [
