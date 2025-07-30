@@ -7,8 +7,9 @@ import type { AddTaskType } from "./schemas/addTaskSchema";
 
 const bridge: IpcBridge = {
     getUsers: () => ipcRenderer.invoke("api:getUsers"),
+    getUserById: (id: string) => ipcRenderer.invoke("api:getUserById", id),
     addUser: (data: AddUserType) => ipcRenderer.invoke("api:addUser", data),
-    getTaskByUser: (idUser: string) => ipcRenderer.invoke("api:getTaskByUser", idUser),
+    getTasksByUser: (idUser: string) => ipcRenderer.invoke("api:getTasksByUser", idUser),
     addTask: (data: AddTaskType) => ipcRenderer.invoke("api:addTask", data)
 }
 

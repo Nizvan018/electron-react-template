@@ -1,3 +1,4 @@
+import { eq } from "drizzle-orm";
 import { db } from "../db";
 import { user, type SelectUser } from "../db/schema";
 import { addUserSchema, type AddUserType } from "../schemas/addUserSchema";
@@ -15,6 +16,29 @@ export const getUsers = async (): Promise<{ result: SelectUser[] | null, error: 
     } catch (error) {
         console.error(error);
         return { result: null, error: "Unexpected error" }
+    }
+}
+
+/**
+ * Get an especific user using their id
+ * 
+ * @param {string} id 
+ * @returns If ok=true returns a user, if not returns an error string
+ */
+export const getUserById = async (id: string): Promise<
+    { ok: true, user: SelectUser } | { ok: false, error: string }
+> => {
+    try {
+        const foundUser = await db.select().from(user).where(eq(user.id, id)).get();
+
+        if (!foundUser) {
+            return { ok: false, error: "User not found" }
+        }
+
+        return { ok: true, user: foundUser }
+    } catch (error) {
+        console.error(error);
+        return { ok: false, error: "Unexpected error" }
     }
 }
 

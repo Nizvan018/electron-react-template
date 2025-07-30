@@ -9,7 +9,7 @@ import { addTaskSchema, type AddTaskType } from "../schemas/addTaskSchema";
  * @param {string} idUser 
  * @returns If ok=true a Task array, if not an error string
  */
-export const getTaskByUser = async (idUser: string): Promise<
+export const getTasksByUser = async (idUser: string): Promise<
     { ok: true; tasks: SelectTask[] } | { ok: false; error: string }
 > => {
     try {

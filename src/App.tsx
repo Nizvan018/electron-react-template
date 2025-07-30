@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AddUser from "./pages/AddUser";
 import AddTask from "./pages/AddTask"
+import UserTask from "./pages/UserTask";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/addUser" element={<AddUser />} />
                         <Route path="/addTask" element={<AddTask />} />
+                        <Route path="/userTask/:id" element={<UserTask />} />
                     </Routes>
                 </main>
             </div>
